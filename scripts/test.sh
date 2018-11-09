@@ -12,3 +12,5 @@ fi
 #awk '{printf $1 + $2}'
 echo "test bash end"
 }
+
+echo "alias clion=/usr/local/clion*/bin/clion.sh" >> ~/.bashrc
