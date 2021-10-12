@@ -2,7 +2,7 @@
 set -e
 
 # replace with your default email here
-email="2120170431@bit.edu.cn"
+email="email"
 
 if [ -n "$1" ]; then
 	email=$1
