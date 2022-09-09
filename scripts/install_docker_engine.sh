@@ -8,14 +8,14 @@
 # ---
 
 function install_docker {
-    apt update
-    apt install -y curl uidmap
-    curl -fsSL https://get.docker.com | bash
+    sudo apt update
+    sudo apt install -y curl uidmap
+    sudo curl -fsSL https://get.docker.com | bash
 }
 
 function post_installation {
-    groupadd docker
-    usermod -aG docker $USER
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
     newgrp docker
 }
 

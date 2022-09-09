@@ -4,8 +4,11 @@
 
 # ---
 # test information
-#
+# test passed on docker image ubuntu:18.04
 # ---
+
+# after installation, make sure the environment variable is set
+# add 'export LD_LIBRARY_PATH=/usr/local/lib' to your ~/.bashrc (Linux)
 
 set -e
 
@@ -57,4 +60,3 @@ apt_install
 work_dir
 install_ipopt
 del_dir
-# add 'export LD_LIBRARY_PATH=/usr/local/lib' to your ~/.bashrc (Linux)

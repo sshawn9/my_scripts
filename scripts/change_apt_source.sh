@@ -4,7 +4,7 @@
 
 # ---
 # test information
-# passed on docker image ubuntu:18.04
+# test passed on docker image ubuntu:18.04
 # ---
 
 set -e
