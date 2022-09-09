@@ -7,7 +7,7 @@ For simplicity, you can just write your own configs in `bash_aliases` under the 
 What confused me is there are `/etc/profile`, `/etc/bash.bashrc` and so on, what's the mechanism between them? And how ssh pass environment variables?  
 
 ## test information  
-All the scripts should contain a basic test information, and CI is considered.
+All the scripts should contain a basic test information, and CI is considering.
 
 ## large source file
 I konw it can be stored with git-lfs rather than in this repo directly, or get the source code at scripts running time.  
