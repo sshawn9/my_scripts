@@ -36,7 +36,7 @@ function install_cppad {
     mkdir build
     cd build
     cmake ..
-    make check
+    # make check
     $DO make install
 }
 

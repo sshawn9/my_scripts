@@ -36,7 +36,7 @@ function install_ceres {
     cd ceres-bin
     cmake ../ceres-solver*
     make -j$(nproc)
-    make test
+    # make test
     $DO make install
 }
 

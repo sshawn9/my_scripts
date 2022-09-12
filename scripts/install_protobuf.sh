@@ -19,7 +19,7 @@ protobuf_url=https://github.com/protocolbuffers/protobuf/releases/download/v21.5
 
 function install_dependency {
     $DO apt update
-    $DO apt-get -y install autoconf automake libtool curl make g++ unzip wget
+    $DO apt install -y autoconf automake libtool curl make g++ unzip wget
 }
 
 function work_dir {
@@ -36,7 +36,7 @@ function install_protobuf {
     cd protobuf*
     ./configure
     make -j$(nproc) # $(nproc) ensures it uses all cores for compilation
-    make check
+    # make check
     $DO make install
     $DO ldconfig # refresh shared library cache.
 }

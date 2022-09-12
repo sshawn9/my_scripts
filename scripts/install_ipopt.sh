@@ -47,8 +47,10 @@ function install_ipopt {
     unzip ./ThirdParty/HSL/coinhsl-archive*.zip -d ./ThirdParty/HSL
     rm -rf ./ThirdParty/HSL/coinhsl-archive*.zip
     mv ./ThirdParty/HSL/coinhsl-archive* ./ThirdParty/HSL/coinhsl
-    $DO bash coinbrew.sh build Ipopt --prefix=/usr/local --test --no-prompt --verbosity=3
+    # $DO bash coinbrew.sh build Ipopt --prefix=/usr/local --test --no-prompt --verbosity=3
+    $DO bash coinbrew.sh build Ipopt --prefix=/usr/local --no-prompt --verbosity=3
     # $DO bash coinbrew.sh install Ipopt --no-prompt
+    $DO ldconfig
 }
 
 function del_dir {
