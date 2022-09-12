@@ -4,7 +4,7 @@
 
 # ---
 # test information
-#
+# test failed on ubuntu16.04, but install binaries works, refer to: https://docs.docker.com/engine/install/binaries/
 # ---
 
 function install_docker {
