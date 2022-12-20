@@ -1,0 +1,20 @@
+# refer to: https://github.com/theasp/docker-novnc
+version: '3'
+services:
+  ide:
+    image: osrf/ros:melodic-desktop-full
+    environment:
+      - DISPLAY=novnc:0.0
+    depends_on:
+      - novnc
+    command: ["sleep","infinity"]
+  novnc:
+    image: theasp/novnc:latest
+    environment:
+      # Adjust to your screen size
+      - DISPLAY_WIDTH=1600
+      - DISPLAY_HEIGHT=900
+      - RUN_XTERM=no
+      - RUN_FLUXBOX=yes
+    ports:
+      - "8080:8080"
