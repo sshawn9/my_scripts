@@ -2,13 +2,15 @@
 version: '3'
 services:
   remote_env:
-    image: sshawn/bionic_remote_env:1.0
+    image: ubuntu:18.04 #sshawn/bionic_remote_env:1.0
     container_name: remote_env
     hostname: bionic_remote_env
     environment:
       - DISPLAY=novnc:0.0
     ports:
       - "2222:22"
+    volumes:
+      - ~/workspace:/root/workspace
     depends_on:
       - novnc
     networks:
