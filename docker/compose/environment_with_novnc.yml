@@ -1,15 +1,22 @@
 # refer to: https://github.com/theasp/docker-novnc
 version: '3'
 services:
-  ide:
-    image: osrf/ros:melodic-desktop-full
+  remote_env:
+    image: sshawn/bionic_remote_env:1.0
+    container_name: remote_env
+    hostname: bionic_remote_env
     environment:
       - DISPLAY=novnc:0.0
+    ports:
+      - "2222:22"
     depends_on:
       - novnc
+    networks:
+      - bionic_remote_env_network
     command: ["sleep","infinity"]
   novnc:
     image: theasp/novnc:latest
+    container_name: novnc
     environment:
       # Adjust to your screen size
       - DISPLAY_WIDTH=1600
@@ -18,3 +25,8 @@ services:
       - RUN_FLUXBOX=yes
     ports:
       - "8080:8080"
+    networks:
+      - bionic_remote_env_network
+
+networks:
+  bionic_remote_env_network:
