@@ -1,8 +1,9 @@
 # refer to: https://github.com/theasp/docker-novnc
+# docker compose -f environment_with_novnc.yml up -d
 version: '3'
 services:
   remote_env:
-    image: ubuntu:18.04 #sshawn/bionic_remote_env:1.0
+    image: sshawn/bionic_remote_env:1.0
     container_name: remote_env
     hostname: bionic_remote_env
     environment:
