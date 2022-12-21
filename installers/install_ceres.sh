@@ -16,7 +16,7 @@ if [ $UID -eq 0 ];then DO="";fi
 
 function install_dependency {
     $DO apt update
-    $DO apt install -y cmake libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev wget curl
+    $DO apt install -y cmake libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev wget curl gcc g++
 }
 
 function work_dir {
