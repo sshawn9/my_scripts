@@ -9,7 +9,7 @@ What confused me is there are `/etc/profile`, `/etc/bash.bashrc` and so on, what
 ## test information  
 All the scripts should contain a basic test information, and CI is considering.
 
-## large source file
+## ~~large source file~~ already done
 I konw it can be stored with git-lfs rather than in this repo directly, or get the source code at scripts running time.  
 The excuse is: sometimes I have to work with platforms which are not convenient to connect to the network, so I just put them together roughly.  
 
