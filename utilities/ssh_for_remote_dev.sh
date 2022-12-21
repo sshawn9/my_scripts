@@ -40,3 +40,4 @@ $DO echo 'PermitUserEnvironment yes' >> /etc/ssh/sshd_config
 $DO echo 'PermitEmptyPasswords yes' >> /etc/ssh/sshd_config
 $DO mkdir /run/sshd
 sed -i '1i. ~/.bash_env' ~/.bashrc
+touch ~/.bash_env
