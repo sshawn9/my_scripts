@@ -13,3 +13,4 @@ echo "bash ssh_for_remote_dev.sh" >> build/build.sh
 echo "bash install_dependencies.sh" >> build/build.sh
 
 docker build -f bionic_remote_env.Dockerfile -t sshawn/bionic_remote_env:1.0 .
+rm -rf build
