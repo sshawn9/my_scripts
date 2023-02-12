@@ -33,10 +33,10 @@
 # ceres
 # protobuf
 
-# docker run -itd \
-# 	-v $HOME/workspace/my_scripts/scripts:/root/external \
-# 	--name test1 \
-# 	ubuntu:18.04
+docker run -itd \
+	-v $HOME:/root/external \
+	--name test1 \
+	ubuntu:18.04
 # docker run -itd \
 # 	-v $HOME/workspace/my_scripts/scripts:/root/external \
 # 	--name test2 \
