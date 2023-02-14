@@ -6,7 +6,7 @@ mkdir -p build/packages
 
 
 cp -r ../../installers/install_osqp.sh build
-cp -r ../../utilities/packages/osqp* build/packages
+cp -r ../../installers/packages/osqp* build/packages
 echo "#!/bin/bash" >> build/build.sh
 echo "set -e" >> build/build.sh
 echo "bash install_osqp.sh" >> build/build.sh
