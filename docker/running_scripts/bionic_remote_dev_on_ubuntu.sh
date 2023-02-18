@@ -8,7 +8,10 @@ docker run -itd \
 	-e GDK_DPI_SCALE \
 	--privileged \
 	--device=/dev/dri:/dev/dri \
+	--hostname=star-docker \
 	-p 2222:22 \
 	-v $HOME/workspace:/root/workspace \
+	-v $HOME/autonomous:/root/autonomous \
 	--name remote_env \
-	sshawn/bionic_remote_env:1.0
+	sshawn/custom_bit_bionic_remote_env:1.2 \
+	/bin/bash
