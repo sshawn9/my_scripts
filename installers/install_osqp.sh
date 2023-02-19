@@ -34,7 +34,7 @@ function install_osqp {
     mkdir build
     cd build
     cmake -G "Unix Makefiles" ..
-    cmake --build . --target install
+    $DO cmake --build . --target install
 }
 
 function del_dir {
