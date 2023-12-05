@@ -4,15 +4,15 @@
 
 # ros:melodic-ros-core-bionic
 # osrf/ros:melodic-desktop-full-bionic
-ARG BASE_IMAGE=ros:melodic-ros-core-bionic
+ARG BASE_IMAGE=ros:noetic-ros-core
 
 FROM $BASE_IMAGE
 
 # Here I made launcher.sh as the entrypoint of the docker image
 # And it will switch between default_entrypoint.sh and your custom entrypoint automatically
-COPY default_entrypoint.sh launcher.sh /
-RUN chmod 777 /default_entrypoint.sh /launcher.sh
-ENTRYPOINT [ "/launcher.sh" ]
+# COPY default_entrypoint.sh launcher.sh /
+# RUN chmod 777 /default_entrypoint.sh /launcher.sh
+# ENTRYPOINT [ "/launcher.sh" ]
 
 # Set some environment variables
 ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH \
@@ -22,7 +22,7 @@ ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH \
 # I put the script directly into Dockerfile
 COPY control_dev_install.sh /
 RUN echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/no-recommends \
-    && rm -f ros_entrypoint.sh \
+    # && rm -f ros_entrypoint.sh \
     # --------------------------------------
     # Install curl for downloading scripts
     # && apt-get update \
