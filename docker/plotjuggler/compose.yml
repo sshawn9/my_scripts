@@ -1,0 +1,35 @@
+# refer to: https://github.com/theasp/docker-novnc
+# docker compose -f compose.yml up -d
+version: '3'
+services:
+  plotjuggler:
+    image: sshawn/plotjuggler:noetic
+    container_name: plotjuggler
+    hostname: plotjuggler
+    environment:
+      - DISPLAY=novnc:0.0
+    ports:
+      - "2222:22"
+    volumes:
+      - ~/workspace:/root/workspace
+    depends_on:
+      - novnc
+    networks:
+      - plotjuggler
+  novnc:
+    image: theasp/novnc:latest
+    container_name: novnc
+    hostname: plotjuggler
+    environment:
+      # Adjust to your screen size
+      - DISPLAY_WIDTH=1600
+      - DISPLAY_HEIGHT=900
+      - RUN_XTERM=no
+      - RUN_FLUXBOX=yes
+    ports:
+      - "8080:8080"
+    networks:
+      - plotjuggler
+
+networks:
+  plotjuggler:
