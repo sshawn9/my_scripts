@@ -23,7 +23,7 @@ $DO apt-get install -y git \
                        gcc \
                        g++ \
                        gdb \
-                       libyaml-cpp-dev\
+                       libyaml-cpp-dev \
                        libeigen3-dev \
                        libgeographic-dev \
                        libtbb-dev \
@@ -33,7 +33,6 @@ git clone https://github.com/sshawn9/my_scripts.git
 cd my_scripts
 git lfs pull
 cd installers
-$DO bash install_gsl.sh
 $DO bash install_osqp.sh
 $DO bash install_protobuf.sh
 cd ../..
