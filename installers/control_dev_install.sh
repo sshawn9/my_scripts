@@ -27,7 +27,9 @@ $DO apt-get install -y git \
                        libeigen3-dev \
                        libgeographic-dev \
                        libtbb-dev \
-                       libzmqpp-dev
+                       libzmqpp-dev \
+                       libfmt-dev \
+                       libclass-loader-dev
 
 git clone https://github.com/sshawn9/my_scripts.git
 cd my_scripts
