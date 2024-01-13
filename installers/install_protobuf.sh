@@ -30,7 +30,7 @@ function work_dir {
 }
 
 function install_protobuf {
-    wget protobuf_url
+    wget -t 10 protobuf_url
     # cp ../packages/protobuf*.tar.gz .
     tar -xf protobuf*.tar.gz
     rm -rf protobuf*.tar.gz
