@@ -15,7 +15,8 @@ if [ $UID -eq 0 ];then DO="";fi
 # echo $DO
 
 $DO apt update
-$DO apt-get install -y build-essential \
+$DO apt-get install -y wget \
+                       build-essential \
                        cmake \
                        make \
                        gcc \
