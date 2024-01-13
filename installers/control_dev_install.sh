@@ -15,9 +15,7 @@ if [ $UID -eq 0 ];then DO="";fi
 # echo $DO
 
 $DO apt update
-$DO apt-get install -y git \
-                       git-lfs \
-                       build-essential \
+$DO apt-get install -y build-essential \
                        cmake \
                        make \
                        gcc \
@@ -26,16 +24,12 @@ $DO apt-get install -y git \
                        libyaml-cpp-dev \
                        libeigen3-dev \
                        libgeographic-dev \
-                       libtbb-dev \
-                       libzmqpp-dev \
-                       libfmt-dev \
-                       libclass-loader-dev
+                       libboost-all-dev \
+                       libtbb-dev
 
-git clone https://github.com/sshawn9/my_scripts.git
-cd my_scripts
-git lfs pull
-cd installers
-$DO bash install_osqp.sh
+install_protobuf_url=https://raw.githubusercontent.com/sshawn9/my_scripts/master/installers/install_protobuf.sh
+install_protobuf_url=https://raw.kkgithub.com/sshawn9/my_scripts/master/installers/install_protobuf.sh
+
+wget -t 10 $install_protobuf_url
 $DO bash install_protobuf.sh
-cd ../..
-rm -rf my_scripts
+rm -rf install_protobuf.sh
