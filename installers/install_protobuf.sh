@@ -16,6 +16,7 @@ if [ $UID -eq 0 ];then DO="";fi
 # echo $DO
 
 protobuf_url=https://github.com/protocolbuffers/protobuf/releases/download/v21.5/protobuf-all-21.5.tar.gz
+protobuf_url=https://kkgithub.com/protocolbuffers/protobuf/releases/download/v21.5/protobuf-all-21.5.tar.gz
 
 function install_dependency {
     $DO apt update
@@ -29,8 +30,8 @@ function work_dir {
 }
 
 function install_protobuf {
-    # wget protobuf_url -O source_protobuf.tar.gz
-    cp ../packages/protobuf*.tar.gz .
+    wget protobuf_url
+    # cp ../packages/protobuf*.tar.gz .
     tar -xf protobuf*.tar.gz
     rm -rf protobuf*.tar.gz
     cd protobuf*
