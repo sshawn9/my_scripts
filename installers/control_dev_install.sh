@@ -26,11 +26,14 @@ $DO apt-get install -y wget \
                        libeigen3-dev \
                        libgeographic-dev \
                        libboost-all-dev \
-                       libtbb-dev
+                       libtbb-dev \
+                       libfmt-dev \
+                       libspdlog-dev \
+                       libprotobuf-dev \
 
-install_protobuf_url=https://raw.githubusercontent.com/sshawn9/my_scripts/master/installers/install_protobuf.sh
-install_protobuf_url=https://raw.kkgithub.com/sshawn9/my_scripts/master/installers/install_protobuf.sh
+# install_protobuf_url=https://raw.githubusercontent.com/sshawn9/my_scripts/master/installers/install_protobuf.sh
+# install_protobuf_url=https://raw.kkgithub.com/sshawn9/my_scripts/master/installers/install_protobuf.sh
 
-wget -t 10 $install_protobuf_url
-$DO bash install_protobuf.sh
-rm -rf install_protobuf.sh
+# wget -t 10 $install_protobuf_url
+# $DO bash install_protobuf.sh
+# rm -rf install_protobuf.sh
