@@ -2,9 +2,9 @@
 
 set -e
 
-tag="humble_msgs_20240113"
-tag="melodic_msgs_20240113"
-tag="noetic_msgs_20240113"
+tag="humble_msgs_20240117"
+tag="melodic_msgs_20240117"
+tag="noetic_msgs_20240117"
 image="sshawn/control_dev:$tag"
 
 docker run -itd \
