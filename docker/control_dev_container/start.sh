@@ -11,7 +11,7 @@ docker run -itd \
            -v ~:/star \
            -v ~/Documents/GitHub:/GitHub \
            -v ~/Documents/Github/autonomous:/root/autonomous \
-           -v ~/Documents/Github/autonomous/catkin_ws/src:/src \
+           -v ~/Documents/Github/autonomous/workspace/src:/src \
            --name $tag \
            --hostname $tag \
            $image \
