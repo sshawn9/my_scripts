@@ -75,6 +75,9 @@ function add_scatter(name, x_str, y_str, size_str, prefix)
     create_series(scatters[name], x_str, y_str, size_str, prefix)
 end
 
+------------------------------------------------------------
+--- My personal usage below
+------------------------------------------------------------
 function plot(prefix)
     add_scatter("optimal_xy", "optimal_x/data", "optimal_y/data", "N/data", prefix)
 end
