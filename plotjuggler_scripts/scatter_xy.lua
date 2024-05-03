@@ -2,6 +2,9 @@
 --- https://github.com/facontidavide/PlotJuggler/blob/main/plotjuggler_base/include/PlotJuggler/reactive_function.h
 --- https://github.com/facontidavide/PlotJuggler/blob/main/plotjuggler_base/src/reactive_function.cpp
 
+--- NOTE: ros_version is a global variable that must be set before calling this script
+ros_version = 0
+
 function print_series_names()
     local series_names = GetSeriesNames()
     for i, name in ipairs(GetSeriesNames()) do
@@ -11,6 +14,11 @@ end
 
 --- create series for scatter plot
 function create_series(series, x_str, y_str, size_str, prefix)
+    if (ros_version ~= 1 and ros_version ~= 2) then
+        print("ros_version is not set correctly")
+        return
+    end
+
     series:clear()
 
     local size = nil
@@ -29,11 +37,21 @@ function create_series(series, x_str, y_str, size_str, prefix)
 
         local name_x, name_y
         if (prefix == nil) then
-            name_x = string.format("%s[%d]", x_str, i)
-            name_y = string.format("%s[%d]", y_str, i)
+            if (ros_version == 1) then
+                name_x = string.format("%s.%d", x_str, i)
+                name_y = string.format("%s.%d", y_str, i)
+            else
+                name_x = string.format("%s[%d]", x_str, i)
+                name_y = string.format("%s[%d]", y_str, i)
+            end
         else
-            name_x = string.format("%s/%s[%d]", prefix, x_str, i)
-            name_y = string.format("%s/%s[%d]", prefix, y_str, i)
+            if (ros_version == 1) then
+                name_x = string.format("%s/%s.%d", prefix, x_str, i)
+                name_y = string.format("%s/%s.%d", prefix, y_str, i)
+            else
+                name_x = string.format("%s/%s[%d]", prefix, x_str, i)
+                name_y = string.format("%s/%s[%d]", prefix, y_str, i)
+            end
         end
 
         local series_x = TimeseriesView.find(name_x)
